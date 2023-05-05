@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>반응형 채팅 프로그램</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parenting Helper - A service for answering questions for novice parents">
+  <meta name="keywords" content="parenting, parents, novice, baby, help, questions, answers">
+  <meta name="author" content="Your Name">
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'uga/chat.css' %}">
+    <script src="{% static 'uga/chat.js' %}"></script>
+
+  <title>Parenting Helper</title>
 </head>
 <body>
-    <header class="top-menu">
-        <h1>채팅 프로그램</h1>
-        <nav>
-            <ul>
-                <li><a href="#">메뉴 1</a></li>
-                <li><a href="#">메뉴 2</a></li>
-                <li><a href="#">메뉴 3</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <aside class="side-menu">
-            <ul>
-                <li><a href="#">사이드 메뉴 1</a></li>
-                <li><a href="#">사이드 메뉴 2</a></li>
-                <li><a href="#">사이드 메뉴 3</a></li>
-            </ul>
-        </aside>
-        <section class="chat-container">
-            <div class="chat-header">
-                <h2>채팅방</h2>
-            </div>
-            <div class="chat-messages" id="chat-messages">
-                <!-- 메시지들이 여기에 표시됩니다 -->
-            </div>
-            <div class="chat-input">
-                <input type="text" id="message-input" placeholder="메시지를 입력하세요...">
-                <button id="send-button">전송</button>
-            </div>
-        </section>
-    </main>
-    <script src="{% static 'uga/chat.js' %}"></script>
+  <header>
+    <nav>
+      <button id="hamburger" class="hamburger">&#9776;</button>
+      <ul class="nav-menu">
+        <li><a href="#main">Main</a></li>
+        <li><a href="#search-history">Search History</a></li>
+        <li><a href="#popular-searches">Popular Searches</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="chatbot" class="container">
+      <h1>Welcome to Parenting Helper</h1>
+      <p>Chat with our helpful bot to get answers to your parenting questions.</p>
+      <div id="chat-messages" class="chat-messages"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section id="search-history" class="container">
+      <h2>Your Search History</h2>
+      <!-- Search history content goes here -->
+    </section>
+
+    <section id="popular-searches" class="container">
+      <h2>Popular Searches</h2>
+      <!-- Popular searches content goes here -->
+    </section>
+  </main>
+
+  <aside>
+    <section id="user-info" class="menu">
+      <!-- User information (pregnancy weeks, child age, etc.) goes here -->
+    </section>
+  </aside>
+
+  <footer>
+    <p>&copy; 2023 Parenting Helper. All rights reserved.</p>
+  </footer>
 </body>
 </html>
