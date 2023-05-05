@@ -4,7 +4,9 @@ from rest_framework.views import APIView
 
 # make answer of the question to possible to eat
 class Sub(APIView):
+
     def get(self, request):
-        return render(request, 'uga/chat.html');
+        return render(request, 'uga/chat.html')
 
-
+    def history(request):
+        return render(request, 'uga/history.html')

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parenting Helper - A service for answering questions for novice parents">
+    <meta name="keywords" content="parenting, parents, novice, baby, help, questions, answers">
+    <meta name="author" content="Your Name">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'uga/chat.css' %}">
+    <script src="{% static 'uga/chat.js' %}"></script>
+
+    <title>Parenting Helper</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="hamburger-menu">&#9776;</div>
+      <div class="logo">서비스 로고</div>
+      <div class="menu">
+        <a href="#">main</a>
+{#      move history html page when history a tag clicked#}
+        <a href="history.html">history</a>
+        <a href="#">popular</a>
+      </div>
+      <div class="auth">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+      </div>
+    </div>
+    <div class="content">
+{#        메인 화면 #}
+      <div class="main">
+            <h1>메인 화면</h1>
+            <!-- 히스토리 화면 -->
+            <div class="history">
+              <div class="search-bar">
+                <input type="text" placeholder="검색">
+              </div>
+              <div class="history-list">
+                <div class="history-item">
+                  <div>
+                    <h2 class="title">검색 기록 타이틀 1</h2>
+                    <p class="details">세부 내용이 표시되는 곳입니다.</p>
+                  </div>
+                  <span class="date-time">2023-05-05 12:00</span>
+                </div>
+                <div class="history-item">
+                  <div>
+                    <h2 class="title">검색 기록 타이틀 2</h2>
+                    <p class="details">세부 내용이 표시되는 곳입니다.</p>
+                  </div>
+                  <span class="date-time">2023-05-05 13:00</span>
+                </div>
+                <!-- 추가적인 검색 기록 아이템을 여기에 삽입하세요. -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

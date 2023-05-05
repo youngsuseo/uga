@@ -22,6 +22,8 @@ from uga.views import Sub
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('foods/', Sub.as_view()),
+    path('foods/history/', Sub.history)
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

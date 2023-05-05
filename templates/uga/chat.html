@@ -1,61 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Parenting Helper - A service for answering questions for novice parents">
-  <meta name="keywords" content="parenting, parents, novice, baby, help, questions, answers">
-  <meta name="author" content="Your Name">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parenting Helper - A service for answering questions for novice parents">
+    <meta name="keywords" content="parenting, parents, novice, baby, help, questions, answers">
+    <meta name="author" content="Your Name">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'uga/chat.css' %}">
     <script src="{% static 'uga/chat.js' %}"></script>
 
-  <title>Parenting Helper</title>
+    <title>Parenting Helper</title>
 </head>
-<body>
-  <header>
-    <nav>
-      <button id="hamburger" class="hamburger">&#9776;</button>
-      <ul class="nav-menu">
-        <li><a href="#main">Main</a></li>
-        <li><a href="#search-history">Search History</a></li>
-        <li><a href="#popular-searches">Popular Searches</a></li>
-        <li><a href="#login">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <div class="header">
+      <div class="hamburger-menu">&#9776;</div>
+      <div class="logo">서비스 로고</div>
+      <div class="menu">
+        <a href="#">main</a>
+        <a href="history">history</a>
+        <a href="#">popular</a>
+      </div>
+      <div class="auth">
+        <a href="#">회원가입</a>
+        <a href="#">로그인</a>
+      </div>
+    </div>
+    <div class="content">
+{#        왼쪽 메뉴 #}
+      <div class="left-menu">
+          <div class="input-group">
+            <label for="weeks">산모의 임신 주차</label>
+            <input type="number" id="weeks" placeholder="임신 주차를 입력하세요">
+          </div>
+          <div class="input-group">
+            <label for="due-date">출산 예정일</label>
+            <input type="date" id="due-date">
+          </div>
+          <div class="input-group">
+            <label for="fetus-gender">태아의 성별</label>
+            <select id="fetus-gender">
+              <option value="">선택하세요</option>
+              <option value="male">남아</option>
+              <option value="female">여아</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="child-gender">아이의 성별</label>
+            <select id="child-gender">
+              <option value="">선택하세요</option>
+              <option value="male">남아</option>
+              <option value="female">여아</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="child-age">아이의 나이</label>
+            <input type="number" id="child-age" placeholder="아이의 나이를 입력하세요">
+          </div>
+          <div class="input-group">
+            <label for="child-weight">아이 몸무게 (kg)</label>
+            <input type="number" id="child-weight" placeholder="아이 몸무게를 입력하세요">
+          </div>
+          <div class="input-group">
+            <label for="child-height">아이 키 (cm)</label>
+            <input type="number" id="child-height" placeholder="아이 키를 입력하세요">
+          </div>
+        </div>
 
-  <main>
-    <section id="chatbot" class="container">
-      <h1>Welcome to Parenting Helper</h1>
-      <p>Chat with our helpful bot to get answers to your parenting questions.</p>
-      <div id="chat-messages" class="chat-messages"></div>
-      <form id="chat-form">
-        <input type="text" id="chat-input" placeholder="Type your message...">
-        <button type="submit">Send</button>
-      </form>
-    </section>
-
-    <section id="search-history" class="container">
-      <h2>Your Search History</h2>
-      <!-- Search history content goes here -->
-    </section>
-
-    <section id="popular-searches" class="container">
-      <h2>Popular Searches</h2>
-      <!-- Popular searches content goes here -->
-    </section>
-  </main>
-
-  <aside>
-    <section id="user-info" class="menu">
-      <!-- User information (pregnancy weeks, child age, etc.) goes here -->
-    </section>
-  </aside>
-
-  <footer>
-    <p>&copy; 2023 Parenting Helper. All rights reserved.</p>
-  </footer>
-</body>
+{#        메인 화면 #}
+      <div class="main">
+          <div class="chat-header">
+            <h2>무엇이든 물어보세요</h2>
+          </div>
+          <div class="chat-messages">
+            <!-- 메시지 예시 -->
+            <div class="message user">
+              <img src="user_profile.jpg" alt="User profile image">
+              <div class="message-content">
+                <span class="username">사용자 이름</span>
+                <p>메시지 내용</p>
+              </div>
+            </div>
+            <div class="message other">
+              <img src="other_profile.jpg" alt="Other profile image">
+              <div class="message-content">
+                <span class="username">상대방 이름</span>
+                <p>메시지 내용</p>
+              </div>
+            </div>
+            <!-- 메시지 예시 종료 -->
+          </div>
+          <div class="chat-input">
+            <textarea placeholder="메시지를 입력하세요..."></textarea>
+            <button type="button">전송</button>
+          </div>
+        </div>
+    </div>
+  </div>
 </html>
